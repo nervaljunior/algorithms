@@ -45,40 +45,10 @@ int questao18();
 int questao19();
 int questao20();
 
-
-void revisao_linguagem_de_programacao(Questao questoes[]) {
-    setlocale(LC_ALL, "Portuguese");
-    int x=10;
-    printf("\t>>>>>questoes de Revisao da Linguagem de Programacao:<<<<<\n\n\t\t\tnesse topico tem apenas %d questoes\n\n",x);
-    submenu(questoes, 10);
-}
-
-void Estruturas_de_repeticao(Questao questoes[]) {
-    setlocale(LC_ALL, "Portuguese");
-    int x=7;
-    printf("\t>>>>>questoes de Estruturas de Repeticao:<<<<<\n\n\t\t\tnesse topico tem apenas %d questoes\n\n",x);
-    submenu(questoes+10, 7);
-}
-
-void Vetores_ou_arrays(Questao questoes[]) {
-    setlocale(LC_ALL, "Portuguese");
-    int x=3;
-    printf("\t>>>>>questoes de Vetores ou Arrays:<<<<<\n\n\t\t\tnesse topico tem apenas %d questoes\n\n",x);
-    submenu(questoes+17, 3);
-}
-
-void submenu(Questao questoes[], int n) {
-    setlocale(LC_ALL, "Portuguese");
-    printf("Digite o numero da questao que deseja acessar: ");
-    int questao;
-    scanf("%d", &questao);
-
-    if (questao < 1 || questao > n) {
-        printf("Numero invalido. nesse topico vai ate a quantidade %d",n);
-    } else {
-     questoes[questao-1].questao();
-    }
-}
+void revisao_linguagem_de_programacao(Questao questoes[]);
+void Estruturas_de_repeticao(Questao questoes[]);
+void Vetores_ou_arrays(Questao questoes[]);
+void submenu(Questao questoes[], int n);
 
 int main() {
     setlocale(LC_ALL, "Portuguese");
@@ -96,13 +66,11 @@ int main() {
 }
 
 void sair() {
-    setlocale(LC_ALL, "Portuguese");
     printf("programa encerrado");
     exit(0);
 }
 
 int menu(int (*questoes[])()) {
-    setlocale(LC_ALL, "Portuguese");
     while (1) {
         printf("\n\n\t\t\t\t\t>>>>>>>>>>>MENU <<<<<<<<<<\n\n");
 
@@ -129,53 +97,72 @@ int menu(int (*questoes[])()) {
     }
 }
 
-/*Fazer um algoritmo que leia três valores e identifique qual o maior valor informado.3.Fazer um algoritmo que leia o nome e a altura de três pessoas, determinando o nome e a altura da menor delas que será apresentado ao usuário deste algoritmo.4.Utilize uma das estruturas condicionais de repetição para: Escreva quantos anos serão necessários  para que Ciclano seja maior que Fulano. Considere que Fulano tem 1,50 m e cresce 2 cm por ano e Ciclano tem 1,10 m e cresce 3 cm por ano.5.Leia um número inteiro e escreva se ele é primo.6.Leia um número inteiro e positivo e escreva o seu fatorial. Considere: N! = 1 x 2 x 3 x ... x N-1 x N e 0 ! = 17.Leia o salário de 15 funcionários e escreva: a) quantos funcionários recebem mais de R$2.000,00; b) quanto a empresa gasta com estes funcionários e c) quanto a empresa gastaria se fosse dar um aumento de 7,5% aos funcionários que recebem menos que R$2.000,00.8.Faça um algoritmoque coloque o valor de cada posição de um vetor (vetor1) em um novo vetor (vetor2), com o dobro do valor original de cada posição do vetor original.9.Faça um algoritmo que faça a união de dois vetores de mesmo tamanho e mesmo tipo em um terceiro vetorcom dobro do tamanho.10.Faça um algoritmo que multipliqueo conteúdo de cada posição de doisvetores entre si e armazene o resultado em um terceiro vetor(que será do mesmo tamanho dos 2 primeiros).
-*/
+void submenu(Questao questoes[], int n) {
+    printf("Digite o numero da questao que deseja acessar: ");
+    int questao;
+    scanf("%d", &questao);
 
+    if (questao < 1 || questao > n) {
+        printf("Numero invalido. nesse topico vai ate a quantidade %d",n);
+    } else {
+     questoes[questao-1].questao();
+    }
+}
+void Estruturas_de_repeticao(Questao questoes[]) {
+    int x=7;
+    printf("\t>>>>>questoes de Estruturas de Repeticao:<<<<<\n\n\t\t\tnesse topico tem apenas %d questoes\n\n",x);
+    submenu(questoes+10, 7);
+}
+void Vetores_ou_arrays(Questao questoes[]) {
+    int x=3;
+    printf("\t>>>>>questoes de Vetores ou Arrays:<<<<<\n\n\t\t\tnesse topico tem apenas %d questoes\n\n",x);
+    submenu(questoes+17, 3);
+}
+void revisao_linguagem_de_programacao(Questao questoes[]) {
+    int x=10;
+    printf("\t>>>>>questoes de Revisao da Linguagem de Programacao:<<<<<\n\n\t\t\tnesse topico tem apenas %d questoes\n\n",x);
+    submenu(questoes, 10);
+}
 
 int questao1() {
+    int ddd;
+    int i,achei=NULL;
+    cidade Cidade[n_cidades]={
+        {11, "Sao Paulo"},
+        {27, "Vitoria"},
+        {31, "Belo Horizonte"},
+        {61, "Brasilia"},
+        {71, "Salvador"},
+        {98, "Maranhao"},};
+        
     printf("\n\t\t\ttopico 1(revisao linguagem de programacao) questao 1\n\n");
-    
-setlocale(LC_ALL, "Portuguese");
-int ddd;
-int i,achei=NULL;
-cidade Cidade[n_cidades]={
-    {11, "Sao Paulo"},
-    {27, "Vitoria"},
-    {31, "Belo Horizonte"},
-    {61, "Brasilia"},
-    {71, "Salvador"},
-    {98, "Maranhao"},};
-
-printf("digite o seu ddd:\n");
-scanf("%d",&ddd);
-if (ddd>10&&ddd<=20){
-    ddd=11;
-};
-if (ddd==98||ddd==99){
-    ddd=98;
-}
-for (size_t i = 0; i < sizeof(Cidade)/sizeof(cidade); i++)
-{
-    if(Cidade[i].ddd==ddd){
-        printf("o ddd da Estado de(o) %s\n",Cidade[i].city);
-        achei=1;
-        break;
-    } 
-}
-if(!achei){
-        printf("DDD desconhecido");
+    printf("digite o seu ddd:\n");
+    scanf("%d",&ddd);
+    if (ddd>10&&ddd<=20){
+        ddd=11;
+    };
+    if (ddd==98||ddd==99){
+        ddd=98;
     }
+    for (size_t i = 0; i < sizeof(Cidade)/sizeof(cidade); i++)
+    {
+        if(Cidade[i].ddd==ddd){
+            printf("o ddd da Estado de(o) %s\n",Cidade[i].city);
+            achei=1;
+            break;
+        } 
+    }
+    if(!achei){
+            printf("DDD desconhecido");
+        }
   return 0; 
 }
 
 int questao2() {
     printf("\n\t\t\ttopico 1(revisao linguagem de programacao) questao 2\n\n");
-    setlocale(LC_ALL, "Portuguese");
     int maior=0;
     int *valores;
     valores=(int*)malloc(quant*sizeof(int));
-    setlocale(LC_ALL, "Portuguese");
     
 
     for (size_t i = 0; i < quant; i++)
@@ -194,7 +181,6 @@ int questao2() {
 
 int questao3() {
     printf("\n\t\t\ttopico 1(revisao linguagem de programacao) questao 3\n\n");
-    setlocale(LC_ALL, "Portuguese");
 Pessoas pessoas[quant];
 int i,maior=0;
     printf("digite o nome da pessoa e em seguida digite a altura quando for pedido\n");
@@ -219,7 +205,6 @@ int i,maior=0;
 
 int questao4() {
     printf("\n\t\t\ttopico 1(revisao linguagem de programacao) questao 4\n\n");
-    setlocale(LC_ALL, "Portuguese");
     float ciclano=1.1,fulano=1.5,i=0;
     
     while (ciclano<=fulano){
@@ -233,7 +218,6 @@ int questao4() {
 
 int questao5() {
     printf("\n\t\t\ttopico 1(revisao linguagem de programacao) questao 5\n\n");
-    setlocale(LC_ALL, "Portuguese");
   int num, i, primo = 1;
 
   printf("Digite um numero inteiro: ");
@@ -258,7 +242,6 @@ int questao5() {
 
 int questao6() {
     printf("\n\t\t\ttopico 1(revisao linguagem de programacao) questao 6\n\n");
-    setlocale(LC_ALL, "Portuguese");
   int num, i, f = 1;
 
   printf("Digite um numero inteiro: ");
@@ -279,7 +262,6 @@ int questao6() {
 
 int questao7() {
     printf("\n\t\t\ttopico 1(revisao linguagem de programacao) questao 7\n\n");
-    setlocale(LC_ALL, "Portuguese");
 
   float *salarios;
   float somaSalarios = 0, gastosMaior2000 = 0, gastosMenor2000 = 0;
@@ -320,7 +302,6 @@ int questao7() {
 
 int questao8() {
     printf("\n\t\t\ttopico 1(revisao linguagem de programacao) questao 8\n\n");
-    setlocale(LC_ALL, "Portuguese");
 
 
   int vetor1[TAMANHO_VETOR] = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
@@ -344,7 +325,6 @@ int questao8() {
 
 int questao9() {
     printf("\n\t\t\ttopico 1(revisao linguagem de programacao) questao 9\n\n");
-    setlocale(LC_ALL, "Portuguese");
   int vetor1[tamanhovetor] = {1, 2, 3, 4, 5};
   int vetor2[tamanhovetor] = {6, 7, 8, 9, 10};
   int *vetor3;
@@ -388,16 +368,14 @@ int questao9() {
 }
 int questao10() {
     printf("\n\t\t\ttopico 1(revisao linguagem de programacao) questao 10\n\n");
-    setlocale(LC_ALL, "Portuguese");
-    #include <stdio.h>
-#include <stdlib.h>
 
-#define TAMANHO_VETOR 5
 
-  int vetor1[TAMANHO_VETOR] = {1, 2, 3, 4, 5};
-  int vetor2[TAMANHO_VETOR] = {6, 7, 8, 9, 10};
+#define tamanhovetor 5
+
+  int vetor1[tamanhovetor] = {1, 2, 3, 4, 5};
+  int vetor2[tamanhovetor] = {6, 7, 8, 9, 10};
   int *vetor3;
-  int tamanho_vetor3 = TAMANHO_VETOR;
+  int tamanho_vetor3 = tamanhovetor;
 
   vetor3 = (int*) malloc(tamanho_vetor3 * sizeof(int));
 
@@ -406,17 +384,17 @@ int questao10() {
     return 1;
   }
 
-  for (int i = 0; i < TAMANHO_VETOR; i++) {
+  for (int i = 0; i < tamanhovetor; i++) {
     vetor3[i] = vetor1[i] * vetor2[i];
   }
 
   printf("Valores do vetor1:\n");
-  for (int i = 0; i < TAMANHO_VETOR; i++) {
+  for (int i = 0; i < tamanhovetor; i++) {
     printf("%d ", vetor1[i]);
   }
 
   printf("\n\nValores do vetor2:\n");
-  for (int i = 0; i < TAMANHO_VETOR; i++) {
+  for (int i = 0; i < tamanhovetor; i++) {
     printf("%d ", vetor2[i]);
   }
 
@@ -428,70 +406,266 @@ int questao10() {
   free(vetor3);
 
   return 0;
-
 }
 int questao11() {
     printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 1\n\n");
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 1\n");
+     int num, primeiro, segundo, quadrado;
+    for (num = 1000; num < 10000; num++) {
+        primeiro = num / 100;
+        segundo = num % 100;
+        quadrado = (primeiro + segundo) * (primeiro + segundo);
+        if (quadrado == num) {
+            printf("%d\n", num);
+        }
+    }
     return 0;
 }
 
 int questao12() {
     printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 2\n\n");
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 2\n");
+
+    int num1 = 0, num2 = 1, proximo, i;
+    printf("Os 100 primeiros termos da serie de Fibonacci sao:\n");
+    printf("%d\n%d\n", num1, num2);
+    for (i = 3; i <= 100; i++) {
+        proximo = num1 + num2;
+        printf("%d\n", proximo);
+        num1 = num2;
+        num2 = proximo;
+    }
     return 0;
 }
+
 
 int questao13() {
     printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 3\n\n");
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 3\n");
+    double x, g, gg, erro;
+    printf("Digite um numero positivo para calcular a raiz quadrada: ");
+    scanf("%lf", &x);
+    printf("Digite um valor inicial para g: ");
+    scanf("%lf", &g);
+    printf("Digite um valor maximo para o erro: ");
+    scanf("%lf", &erro);
+    gg = g * g;
+    while (fabs(gg - x) > erro) {
+        g = (g + x / g) / 2;
+        gg = g * g;
+    }
+    printf("A raiz quadrada de %lf eh %lf\n", x, g);
     return 0;
 }
+
 int questao14() {
     printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 4\n\n");
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 1\n");
+
+    int num, subtrator = 1, raiz = 0;
+    printf("Digite um numero positivo para calcular a raiz quadrada: ");
+    scanf("%d", &num);
+    while (num >= subtrator) {
+        num -= subtrator;
+        subtrator += 2;
+        raiz++;
+    }
+    printf("A raiz quadrada de %d eh %d\n", num, raiz);
     return 0;
 }
+
 
 int questao15() {
     printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 5\n\n");
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 2\n");
+
+    int num1, num2, resto;
+    while (1) {
+        printf("Digite dois numeros (0 para sair): ");
+        scanf("%d %d", &num1, &num2);
+        if (num1 == 0 && num2 == 0) {
+            break;
+        }
+        while (num2 != 0) {
+            resto = num1 % num2;
+            num1 = num2;
+            num2 = resto;
+        }
+        printf("O MDC eh: %d\n", num1);
+    }
     return 0;
 }
+
 
 int questao16() {
     printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 6\n\n");
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 3\n");
-    return 0;
-}
-int questao17() {
-    printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 7\n\n");
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 3\n");
-    return 0;
-}
-int questao18() {
-    printf("\n\t\t\ttopico 3(vetores ou arrays) questao 1\n\n");
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 2\n");
+
+    int num1, num2, i, j, sum1, sum2;
+    printf("Pares de numeros amigaveis entre 1 e 100000:\n");
+    for (num1 = 1; num1 <= 100000; num1++) {
+        sum1 = 0;
+        for (i = 1; i < num1; i++) {
+            if (num1 % i == 0) {
+                sum1 += i;
+            }
+        }
+        num2 = sum1;
+        sum2 = 0;
+        for (j = 1; j < num2; j++) {
+            if (num2 % j == 0) {
+                sum2 += j;
+            }
+        }
+        if (num1 == sum2 && num1 != num2 && num1 < num2 && num2 <= 100000) {
+            printf("(%d,%d)\n", num1, num2);
+        }
+    }
     return 0;
 }
 
-int questao19() {
-    printf("\n\t\t\ttopico 3(vetores ou arrays) questao 2\n\n");
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 3\n");
+int questao17() {
+    printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 7\n\n");
+
+    int numero_magico, tentativa, num_tentativas = 0;
+    srand(time(NULL)); // semente aleatória baseada no tempo
+    numero_magico = rand() % 501; // sorteia um número aleatório entre 0 e 500
+    printf("Bem-vindo ao jogo do numero magico!\n");
+    do {
+        printf("Digite um numero entre 0 e 500: ");
+        scanf("%d", &tentativa);
+        num_tentativas++; // conta o número de tentativas
+        if (tentativa < numero_magico) {
+            printf("Tente um numero maior.\n");
+        } else if (tentativa > numero_magico) {
+            printf("Tente um numero menor.\n");
+        }
+    } while (tentativa != numero_magico); // repete o loop até o usuário acertar o número
+    printf("Parabens, voce acertou o numero magico em %d tentativas!\n", num_tentativas);
+    if (num_tentativas <= 3) {
+        printf("Voce foi muito sortudo!\n");
+    } else if (num_tentativas <= 6) {
+        printf("Voce foi sortudo!\n");
+    } else if (num_tentativas <= 10) {
+        printf("Voce foi normal.\n");
+    } else {
+        printf("Tente novamente.\n");
+    }
     return 0;
 }
+
+int questao18() {
+    printf("\n\t\t\ttopico 3(vetores ou arrays) questao 1\n\n");
+
+    int n, i, j, temp, is_prime, prime_count = 0, sum = 0;
+    float average;
+    int *arr;
+
+    // pede ao usuário para informar o número de valores que deseja inserir
+    printf("Informe o numero de valores que deseja inserir: ");
+    scanf("%d", &n);
+
+    // cria o vetor com o tamanho informado pelo usuário
+    arr = (int*)malloc(n*sizeof(int));
+
+    // preenche o vetor com os valores inseridos
+    for (i = 0; i < n; i++) {
+        printf("Informe o valor %d: ", i+1);
+        scanf("%d", &arr[i]);
+    }
+
+    // encontra o maior valor do vetor
+    int max = arr[0];
+    for (i = 1; i < n; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    printf("Maior valor: %d\n", max);
+
+    // calcula a média dos valores do vetor
+    for (i = 0; i < n; i++) {
+        sum += arr[i];
+    }
+    average = (float)sum/n;
+    printf("Media: %.2f\n", average);
+
+    // ordena o vetor em ordem crescente
+    for (i = 0; i < n-1; i++) {
+        for (j = i+1; j < n; j++) {
+            if (arr[i] > arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    printf("Valores em ordem crescente: ");
+    for (i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    // encontra os valores primos no vetor
+    printf("Subconjunto de valores primos: ");
+    for (i = 0; i < n; i++) {
+        is_prime = 1;
+        for (j = 2; j < arr[i]; j++) {
+            if (arr[i] % j == 0) {
+                is_prime = 0;
+                break;
+            }
+        }
+        if (is_prime == 1 && arr[i] != 1) {
+            printf("%d ", arr[i]);
+            prime_count++;
+        }
+    }
+    if (prime_count == 0) {
+        printf("nenhum valor primo encontrado.");
+    }
+    printf("\n");
+
+    free(arr); // libera o espaço alocado pelo vetor
+    return 0;
+}
+
+
+int questao19() {
+    printf("\n\t\t\ttopico 3(vetores ou arrays) questao 2\n\n");
+
+    int vetor[20], i, maior, menor;
+    float soma=0, media;
+
+    // preenche o vetor com valores digitados pelo usuário
+    printf("Digite 20 valores:\n");
+    for (i=0; i<20; i++) {
+        scanf("%d", &vetor[i]);
+    }
+
+    // encontra o maior e o menor elemento do vetor
+    maior = vetor[0];
+    menor = vetor[0];
+    for (i=1; i<20; i++) {
+        if (vetor[i] > maior) {
+            maior = vetor[i];
+        }
+        if (vetor[i] < menor) {
+            menor = vetor[i];
+        }
+    }
+
+    // calcula a soma e a média aritmética dos elementos do vetor
+    for (i=0; i<20; i++) {
+        soma += vetor[i];
+    }
+    media = soma / 20;
+
+    // imprime o resultado
+    printf("Maior valor: %d\n", maior);
+    printf("Menor valor: %d\n", menor);
+    printf("Soma dos valores: %.2f\n", soma);
+    printf("Media aritmetica: %.2f\n", media);
+
+    return 0;
+}
+
 int questao20() {
     printf("\n\t\t\ttopico 3(vetores ou arrays) questao 3\n\n");
-    setlocale(LC_ALL, "Portuguese");
     printf("questao 3\n");
     return 0;
 }
