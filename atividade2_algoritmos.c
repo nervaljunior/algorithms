@@ -432,66 +432,56 @@ int questao10() {
 }
 int questao11() {
     printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 1\n\n");
-    setlocale(LC_ALL, "Portuguese");
     printf("questao 1\n");
     return 0;
 }
 
 int questao12() {
     printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 2\n\n");
-    setlocale(LC_ALL, "Portuguese");
     printf("questao 2\n");
     return 0;
 }
 
 int questao13() {
     printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 3\n\n");
-    setlocale(LC_ALL, "Portuguese");
     printf("questao 3\n");
     return 0;
 }
 int questao14() {
     printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 4\n\n");
-    setlocale(LC_ALL, "Portuguese");
     printf("questao 1\n");
     return 0;
 }
 
 int questao15() {
     printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 5\n\n");
-    setlocale(LC_ALL, "Portuguese");
     printf("questao 2\n");
     return 0;
 }
 
 int questao16() {
     printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 6\n\n");
-    setlocale(LC_ALL, "Portuguese");
     printf("questao 3\n");
     return 0;
 }
 int questao17() {
     printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 7\n\n");
-    setlocale(LC_ALL, "Portuguese");
     printf("questao 3\n");
     return 0;
 }
 int questao18() {
     printf("\n\t\t\ttopico 3(vetores ou arrays) questao 1\n\n");
-    setlocale(LC_ALL, "Portuguese");
     printf("questao 2\n");
     return 0;
 }
 
 int questao19() {
     printf("\n\t\t\ttopico 3(vetores ou arrays) questao 2\n\n");
-    setlocale(LC_ALL, "Portuguese");
     printf("questao 3\n");
     return 0;
 }
 int questao20() {
     printf("\n\t\t\ttopico 3(vetores ou arrays) questao 3\n\n");
-    setlocale(LC_ALL, "Portuguese");
     printf("questao 3\n");
     return 0;
 }
