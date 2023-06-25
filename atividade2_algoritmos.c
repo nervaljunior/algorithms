@@ -409,6 +409,7 @@ int questao10() {
 }
 int questao11() {
     printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 1\n\n");
+<<<<<<< HEAD
      int num, primeiro, segundo, quadrado;
     for (num = 1000; num < 10000; num++) {
         primeiro = num / 100;
@@ -418,11 +419,15 @@ int questao11() {
             printf("%d\n", num);
         }
     }
+=======
+    printf("questao 1\n");
+>>>>>>> 6f878bf0309c951af3da987127ad9bfe2c8d882b
     return 0;
 }
 
 int questao12() {
     printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 2\n\n");
+<<<<<<< HEAD
 
     int num1 = 0, num2 = 1, proximo, i;
     printf("Os 100 primeiros termos da serie de Fibonacci sao:\n");
@@ -433,12 +438,16 @@ int questao12() {
         num1 = num2;
         num2 = proximo;
     }
+=======
+    printf("questao 2\n");
+>>>>>>> 6f878bf0309c951af3da987127ad9bfe2c8d882b
     return 0;
 }
 
 
 int questao13() {
     printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 3\n\n");
+<<<<<<< HEAD
     double x, g, gg, erro;
     printf("Digite um numero positivo para calcular a raiz quadrada: ");
     scanf("%lf", &x);
@@ -452,11 +461,15 @@ int questao13() {
         gg = g * g;
     }
     printf("A raiz quadrada de %lf eh %lf\n", x, g);
+=======
+    printf("questao 3\n");
+>>>>>>> 6f878bf0309c951af3da987127ad9bfe2c8d882b
     return 0;
 }
 
 int questao14() {
     printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 4\n\n");
+<<<<<<< HEAD
 
     int num, subtrator = 1, raiz = 0;
     printf("Digite um numero positivo para calcular a raiz quadrada: ");
@@ -467,12 +480,16 @@ int questao14() {
         raiz++;
     }
     printf("A raiz quadrada de %d eh %d\n", num, raiz);
+=======
+    printf("questao 1\n");
+>>>>>>> 6f878bf0309c951af3da987127ad9bfe2c8d882b
     return 0;
 }
 
 
 int questao15() {
     printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 5\n\n");
+<<<<<<< HEAD
 
     int num1, num2, resto;
     while (1) {
@@ -488,12 +505,16 @@ int questao15() {
         }
         printf("O MDC eh: %d\n", num1);
     }
+=======
+    printf("questao 2\n");
+>>>>>>> 6f878bf0309c951af3da987127ad9bfe2c8d882b
     return 0;
 }
 
 
 int questao16() {
     printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 6\n\n");
+<<<<<<< HEAD
 
     int num1, num2, i, j, sum1, sum2;
     printf("Pares de numeros amigaveis entre 1 e 100000:\n");
@@ -515,6 +536,19 @@ int questao16() {
             printf("(%d,%d)\n", num1, num2);
         }
     }
+=======
+    printf("questao 3\n");
+    return 0;
+}
+int questao17() {
+    printf("\n\t\t\ttopico 2(estruturas de repeticao) questao 7\n\n");
+    printf("questao 3\n");
+    return 0;
+}
+int questao18() {
+    printf("\n\t\t\ttopico 3(vetores ou arrays) questao 1\n\n");
+    printf("questao 2\n");
+>>>>>>> 6f878bf0309c951af3da987127ad9bfe2c8d882b
     return 0;
 }
 
@@ -627,6 +661,7 @@ int questao18() {
 
 int questao19() {
     printf("\n\t\t\ttopico 3(vetores ou arrays) questao 2\n\n");
+<<<<<<< HEAD
 
     int vetor[20], i, maior, menor;
     float soma=0, media;
@@ -661,6 +696,9 @@ int questao19() {
     printf("Soma dos valores: %.2f\n", soma);
     printf("Media aritmetica: %.2f\n", media);
 
+=======
+    printf("questao 3\n");
+>>>>>>> 6f878bf0309c951af3da987127ad9bfe2c8d882b
     return 0;
 }
 

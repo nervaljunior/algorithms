@@ -3,262 +3,269 @@
 #include<string.h>
 #include<locale.h>
 
-#define n_cidades 6
-#define hora 12
-
-typedef struct {
-    int ddd;
-    char city[50];
-}cidade;
 
 void sair();
-int menu();
-int questao1();
-int questao2();
-int questao3();
-int questao4();
-int questao5();
-int questao6();
-int questao7();
-int questao8();
-int questao9();
-int questao10();
-int questao11();
-int questao12();
-int questao13();
-int questao14();
-int questao15();
-int questao16();
-int questao17();
-int questao18();
-int questao19();
-int questao20();
+
+void menu();
+
+void quest1();
+void quest2();
+void quest3();
+void quest4();
+void quest5();
+void quest6();
+void quest7();
+void quest8();
+void quest9();
+void quest10();
 
 
-void revisao_linguagem_de_programacao(questoes) {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questoes de Revisao da Linguagem de Programacao:\n");
-    submenu(questoes, 10);
+void main(){
+  
+  printf("\tolA, caro professor!! meu nome E Nerval junior\n");
+  printf("\t\t\t\tmatricula:2021018510\n");
+  printf("aperte <ENTER> para comecar a navegar no MENU de questoes\n");
+  scanf("[\n]");
+  menu();   
+}
+void sair(){
+  printf("programa encerrado");
+  system("EXIT");
 }
 
-void Estruturas_de_repeticao(questoes) {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questoes de Estruturas de Repeticao:\n");
-    submenu(questoes+10, 7);
+void menu(){
+printf("\n\n\t\t\t\t\t>>>>>>>>>>>MENU <<<<<<<<<<\n\n");
+printf("\n\n\t\t\t essa atividade avaliativa 2\n\n");
+
+
+int questao;
+printf("\nescolha a questao que vc deseja digitando o numero:\n\t0-PARA FECHAR O PROGRAMA\n\t1-questao 1\n\t2-questao 2\n\t3-questao 3\n\t4-questao 4\n\t5-questao 5\n\t6-questao 6\n\t7-questao 7\n\t8-questao 8\n\t9-questao 9\n\t10-questao 10\n \n\t>>>");
+scanf("%d",&questao);
+switch(questao){
+  
+case 1: quest1();
+
+case 2: quest2();
+
+case 3: quest3();
+
+case 4: quest4();
+
+case 5: quest5();
+
+case 6: quest6();
+
+case 7: quest7();
+
+case 8: quest8();
+
+case 9: quest9();
+
+case 10: quest10();
+
+default: sair();
 }
 
-void Vetores_ou_arrays(questoes) {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questoes de Vetores ou Arrays:\n");
-    submenu(questoes+17, 3);
 }
 
-void submenu(int (*questoes[])(), int n) {
-    setlocale(LC_ALL, "Portuguese");
-    printf("Digite o numero da questao que deseja acessar: ");
-    int questao;
-    scanf("%d", &questao);
+void quest1()
+{ 
+ 
+printf("\n\t\t\t\t\t>>>>>>>>>>>questao 1<<<<<<<<<<\n\n");
+printf("\nI - Considerando um vetor (char vet[10];), um ponteiro para o vetor (char *p;) e dado por p=&vet[0];.\n");
+printf("\nII - Uma string e uma cadeia de caracteres com um terminador ( barra invertida(/) 0).\n"),
+printf("\nIII - Considerando um vetor (char vet[10];), um ponteiro para o vetor (char *p;) e dado por p=vet;\n");
+printf("\nresposta: \nletra A ou C\n");
+// estou entre letra A i, ii, iii estao corretas, e letra c i, ii apenas
 
-    if (questao < 1 || questao > n) {
-        printf("Numero invalido. nesse topico vai ate a quantidade %d",n);
-    } else {
-     (*questoes[questao-1])();
-    }
+menu();}
+
+
+void quest2()
+{
+  printf("\n\t\t\t\t\t>>>>>>>>>>>questao 2<<<<<<<<<<\n\n");
+  printf("resposta: \na biblioteca necessaria para usar as funcoes malloc() e free(). letra b) <stdlib.h>.\n");
+    
+
+menu();
+};
+
+void quest3()
+{
+  printf("\n\t\t\t\t\t>>>>>>>>>>>questao 3<<<<<<<<<<\n\n");
+  printf(" \nreposta: \nI - Novos elementos entram, no conjunto, exclusivamente, no topo da pilha. \nII - O unico elemento que pode sair da pilha em um dado momento, e o elemento do topo. \nIII - as Pilhas sao conhecidas como LIFO (last in, first out), isto e, o ultimo a entrar e o ultimo a sair. \n todas essas alternativas estao corretas\n");
+
+menu();	
 }
 
-int main() {
-    setlocale(LC_ALL, "Portuguese");
-    int (*questoes[])() = { questao1, questao2, questao3, questao4, questao5, questao6, questao7,questao8,questao9,questao10,questao11, questao12, questao13, questao14, questao15, questao16, questao17,questao18,questao19,questao20 };
 
-    printf("\tola, caro professor Felipe Borges!! meu nome e Nerval junior\n");
-    printf("\tessa atividade e para obtencao de nota de 20 porcento da avaliacao 1 \n");
-    printf("\t\t\t\tmatricula:2021018510\n");
-    printf("aperte <ENTER> para comecar a navegar no MENU de questoes\n");
-    scanf("[\n]");
-    menu(questoes);
-    return 0;
-}
+void quest4(){
 
-void sair() {
-    setlocale(LC_ALL, "Portuguese");
-    printf("programa encerrado");
-    exit(0);
-}
+printf("\n\t\t\t\t\t>>>>>>>>>>>questao 4<<<<<<<<<<\n\n");
+/*Supoe-se que as posicoes (enderecos) de memoria ocupadas pelas variaveis iVar, jVar, pPont e qPont sejam 
+respectivamente 3080, 3084, 3088 e 3096. Responda:
+a) Qual sera o valor que a pPont assume?  ENDEREcO DE IVAR
+b) O que de fato ocorre, ou seja, qual sera o valor que *pPont assume? 15
+c) Qual sera o valor de jVar depois da atribuicao. Por quê? 30
+d) Qual sera o valor de qPont depois da atribuicao. Por quê? 2 enderecos de memoria a mais
+*/
+int iVar=15;
+int jVar,*pPont,*qPont;
+pPont =&iVar;
+jVar=2*(*pPont);
+qPont=2+(pPont);
 
-int menu(int (*questoes[])()) {
-    setlocale(LC_ALL, "Portuguese");
-    while (1) {
-        printf("\n\n\t\t\t\t\t>>>>>>>>>>>MENU <<<<<<<<<<\n\n");
+printf("\nA) O valor que a variavel pPont assume e o endereco de memoria da variavel iVar, que e 3080.\n");
+printf("\nB) O valor que *pPont assume e o conteudo da memoria apontada por pPont, ou seja, o valor da variavel iVar, que e 15.\n");
+printf("\nC) Apos a atribuicao jVar = 2 * (*pPont), o valor de jVar sera 30. Isso ocorre porque *pPont contem o valor de iVar (que e 15), e multiplicar esse valor por 2 resulta em 30.\n");
+printf("\nd) Apos a atribuicao qPont = 2 + (pPont), o valor de qPont sera o endereco de memoria apontado por pPont, somado a 2. Nesse caso, se pPoint ta no endereco 3088 qPont tera o valor 3096. Isso ocorre porque o tipo de pPont e um ponteiro para inteiro, e somar 2 a um ponteiro desloca a posicao de memoria em bytes, e nao em elementos. Como um inteiro ocupa 4 bytes em muitas plataformas, somar 2 ao endereco de iVar resulta em um deslocamento de 8 bytes (2 * 4), o que corresponde a dois enderecos de memoria à frente.*/\n");
 
-        int opcao;
-        printf("\nEscolha um topico para acessar:\n\t0 - Sair\n\t1 - Revisao da Linguagem de Programacao\n\t2 - Estruturas de Repeticao\n\t3 - Vetores ou Arrays\n\t\n>>> ");
-        scanf("%d", &opcao);
 
-        switch (opcao) {
-            case 0:
-                sair();
-                break;
-            case 1:
-                revisao_linguagem_de_programacao(questoes);
-                break;
-            case 2:
-                Estruturas_de_repeticao(questoes);
-                break;
-            case 3:
-                Vetores_ou_arrays(questoes);
-                break;
-            default:
-                printf("Opcao invalida.\n");
-        }
-    }
-}
+menu();
+};
 
-/*Fazer um algoritmo que leia três valores e identifique qual o maior valor informado.3.Fazer um algoritmo que leia o nome e a altura de três pessoas, determinando o nome e a altura da menor delas que será apresentado ao usuário deste algoritmo.4.Utilize uma das estruturas condicionais de repetição para: Escreva quantos anos serão necessários  para que Ciclano seja maior que Fulano. Considere que Fulano tem 1,50 m e cresce 2 cm por ano e Ciclano tem 1,10 m e cresce 3 cm por ano.5.Leia um número inteiro e escreva se ele é primo.6.Leia um número inteiro e positivo e escreva o seu fatorial. Considere: N! = 1 x 2 x 3 x ... x N-1 x N e 0 ! = 17.Leia o salário de 15 funcionários e escreva: a) quantos funcionários recebem mais de R$2.000,00; b) quanto a empresa gasta com estes funcionários e c) quanto a empresa gastaria se fosse dar um aumento de 7,5% aos funcionários que recebem menos que R$2.000,00.8.Faça um algoritmoque coloque o valor de cada posição de um vetor (vetor1) em um novo vetor (vetor2), com o dobro do valor original de cada posição do vetor original.9.Faça um algoritmo que faça a união de dois vetores de mesmo tamanho e mesmo tipo em um terceiro vetorcom dobro do tamanho.10.Faça um algoritmo que multipliqueo conteúdo de cada posição de doisvetores entre si e armazene o resultado em um terceiro vetor(que será do mesmo tamanho dos 2 primeiros).
+
+void quest5()
+{ 
+
+  printf("\n\t\t\t\t\t>>>>>>>>>>>questao 5<<<<<<<<<<\n\n");
+  printf("qual sera a saida deste programa, supondo que i ocupa o endereco 2048 na memoria?\n");
+
+int i= 5, *p;
+p=&i;
+printf("%p-%d-%d\n",p,*p+2,3*(*p));
+
+printf("2048 - 7 - 15") ;
+
+menu();
+};
+
+void quest6(){ 
+
+    printf("\n\t\t\t\t\t>>>>>>>>>>>questao 6<<<<<<<<<<\n\n");
+
+/*Considerando que p seja uma pilha de 4 posicoes. Qual sera o estado final da pilha apos estas operacoes?
+p= cria_pilha()
+
+empilha(p,15)
+empilha(p,25)
+empilha(p,30)
+desempilha(p)
+empilha(p,50)
+desempilha(p)
+empilha(p,40)
+*/
+printf("primeiro e feito a funcao de criacao da pilha");
+printf("\ntopo\n|__|\n");
+printf("empilhasse 3 numeros: 15,25 e 30");
+printf("\ntopo\n|30|\n|25|\n|15|\n|__|\n");
+printf("desempilha o ultimo numero que foi adicionado, sobrando: 25,15 ");
+printf("\ntopo\n|25|\n|15|\n|__|\n");
+printf("depois empilhasse o numero 50, ficando ");
+printf("\ntopo\n|50|\n|25|\n|15|\n|__|\n");
+printf("desempilha o ultimo numero que foi adicionado, sobrando: 25,15 ");
+printf("\ntopo\n|25|\n|15|\n|__|\n");
+printf("empilhasse o numero 40");
+printf("\ntopo\n|40|\n|25|\n|15|\n|__|\n");
+
+
+
+
+menu();
+};
+
+void quest7(){ 
+
+  printf("\n\t\t\t\t\t>>>>>>>>>>>questao 7<<<<<<<<<<\n\n");
+
+printf("Com base no codigo apresentado na pagina A SEGUIR (que apresenta uma Pilha de 20 elementos do tipo inteiro utilizando struct, bem como 3 funcoes: empilha, desempilha e imprimePilha), responda: ");
+
+/*7. Desenvolva uma operacao para transferir elementos de uma pilha P1 para uma pilha P2 (copia). 
+Siga o prototipo abaixo:
+void transferirElementos(Pilha *P1, Pilha *P2);*/
+
+menu();
+};
+
+
+void quest8()
+{ 
+
+  printf("\n\t\t\t\t\t>>>>>>>>>>>questao 8<<<<<<<<<<\n\n");
+
+/* Desenvolva um algoritmo para inverter a posicao dos elementos de uma pilha P1. Você pode criar 
+pilhas auxiliares, se necessario. Mas o resultado precisa ser dado na pilha P. Siga o prototipo abaixo:
+void inverter (pilha *P1);*/
+
+menu();
+};
+
+void quest9(){ 
+
+    printf("\n\t\t\t\t\t>>>>>>>>>>>questao 9<<<<<<<<<<\n\n");
+
+
+/*Desenvolva um algoritmo para testar se duas pilhas P1 e P2 sao iguais. Duas pilhas sao iguais se possuem 
+os mesmos elementos, na mesma ordem.
+void iguais(pilha *P1, pilha *P2);*/
+
+menu();
+};
+
+void quest10(){ 
+
+  printf("\n\t\t\t\t\t>>>>>>>>>>>questao 10<<<<<<<<<<\n\n");
+
+  /*Desenvolva um algoritmo para informar o usuario final se uma pilha P1 esta cheia. Siga o prototipo abaixo:
+void cheia(pilha *P1);
 */
 
 
-int questao1() {
-setlocale(LC_ALL, "Portuguese");
-int ddd;
-int i,achei=NULL;
-cidade Cidade[n_cidades]={
-    {11, "Sao Paulo"},
-    {27, "Vitoria"},
-    {31, "Belo Horizonte"},
-    {61, "Brasilia"},
-    {71, "Salvador"},
-    {98, "Maranhao"},};
-/*Faça um algoritmo em português estruturado que leia o número de DDD  e informe a qual cidade  pertence, considerando só os seguintes valores:
-61 -Brasília
-71 -Salvador
-11 até 20 -São Paulo
-27 -Vitória
-31 -Belo Horizonte
-98 e 99: Maranhão
-qualquer outro: DDD desconhecido.*/
-printf("digite o seu ddd:\n");
-scanf("%d",&ddd);
-if (ddd>10&&ddd<=20){
-    ddd=11;
+
+
+
+/*#include <stdio.h>
+#include <stdlib.h>
+#define TAMANHO_PILHA 20
+typedef struct{
+int vetor[TAMANHO_PILHA]; //tamanho da pilha
+int topo;
+}Pilha;
+//prototipo da funcao empilha
+void empilha(int valor,Pilha *P1){
+//pilha->topo significa: ponteiro "pilha" apontando para CONTEÚDO de um item de uma struct
+if(P1->topo < TAMANHO_PILHA){ //verificando se a pilha nao esta cheia
+//daí pode empilhar
+P1->vetor[P1->topo]=valor;
+P1->topo++;
+printf("O valor %d foi adicionado \n",valor);
+}else{
+printf("Nao ha mais espaco na pilha, \n");
+}
+}
+void desempilha(Pilha *P1){
+if(P1->topo > 0){
+P1->topo--; //desempilha
+printf("Elemento retirado: %d. \n",P1->vetor[P1->topo]);
+}else{
+printf("A pilha esta vazia. \n"); //pilha vazia
+}
+}
+void imprimePilha(Pilha *P1){
+int i;
+printf("\nSegue Impressao da Pilha: \n");
+for(i=((P1->topo)-1);i>=0;i--){ //valor inicial de i e a ultima posicao da pilha e daí decrementa
+printf("\t %d \n",P1->vetor[i]);
+}
+}
+int main() {
+//DECLARA UMA PILHA
+Pilha P1;
+P1.topo=0; // o topo da pilha deve comecar em zero
+}
+*/
+
+menu();
 };
-if (ddd==98||ddd==99){
-    ddd=98;
-}
-for (size_t i = 0; i < sizeof(Cidade)/sizeof(cidade); i++)
-{
-    if(Cidade[i].ddd==ddd){
-        printf("o ddd da cidade de(o) %s\n",Cidade[i].city);
-        achei=1;
-        break;
-    } 
-}
-if(!achei){
-        printf("DDD desconhecido");
-    }
-  return 0; 
-}
 
-int questao2() {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 2\n");
-    return 0;
-}
 
-int questao3() {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 3\n");
-    return 0;
-}
-int questao4() {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 1\n");
-    return 0;
-}
-
-int questao5() {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 2\n");
-    return 0;
-}
-
-int questao6() {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 3\n");
-    return 0;
-}
-int questao7() {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 3\n");
-    return 0;
-}
-int questao8() {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 2\n");
-    return 0;
-}
-
-int questao9() {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 3\n");
-    return 0;
-}
-int questao10() {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 3\n");
-    return 0;
-}
-int questao11() {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 1\n");
-    return 0;
-}
-
-int questao12() {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 2\n");
-    return 0;
-}
-
-int questao13() {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 3\n");
-    return 0;
-}
-int questao14() {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 1\n");
-    return 0;
-}
-
-int questao15() {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 2\n");
-    return 0;
-}
-
-int questao16() {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 3\n");
-    return 0;
-}
-int questao17() {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 3\n");
-    return 0;
-}
-int questao18() {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 2\n");
-    return 0;
-}
-
-int questao19() {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 3\n");
-    return 0;
-}
-int questao20() {
-    setlocale(LC_ALL, "Portuguese");
-    printf("questao 3\n");
-    return 0;
-}
