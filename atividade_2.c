@@ -3,6 +3,11 @@
 #include<string.h>
 #include<locale.h>
 
+#define TAMANHO_PILHA 20
+typedef struct{
+int vetor[TAMANHO_PILHA]; //tamanho da pilha
+int topo;
+}Pilha;
 
 void sair();
 
@@ -75,7 +80,7 @@ printf("\n\t\t\t\t\t>>>>>>>>>>>questao 1<<<<<<<<<<\n\n");
 printf("\nI - Considerando um vetor (char vet[10];), um ponteiro para o vetor (char *p;) e dado por p=&vet[0];.\n");
 printf("\nII - Uma string e uma cadeia de caracteres com um terminador ( barra invertida(/) 0).\n"),
 printf("\nIII - Considerando um vetor (char vet[10];), um ponteiro para o vetor (char *p;) e dado por p=vet;\n");
-printf("\nresposta: \nletra A ou C\n");
+printf("\nresposta: \nletra C\n");
 // estou entre letra A i, ii, iii estao corretas, e letra c i, ii apenas
 
 menu();}
@@ -93,7 +98,7 @@ menu();
 void quest3()
 {
   printf("\n\t\t\t\t\t>>>>>>>>>>>questao 3<<<<<<<<<<\n\n");
-  printf(" \nreposta: \nI - Novos elementos entram, no conjunto, exclusivamente, no topo da pilha. \nII - O unico elemento que pode sair da pilha em um dado momento, e o elemento do topo. \nIII - as Pilhas sao conhecidas como LIFO (last in, first out), isto e, o ultimo a entrar e o ultimo a sair. \n todas essas alternativas estao corretas\n");
+  printf(" \nreposta: \nI - Novos elementos entram, no conjunto, exclusivamente, no topo da pilha. \nII - O unico elemento que pode sair da pilha em um dado momento, e o elemento do topo. \nIII - as Pilhas sao conhecidas como LIFO (last in, first out), isto e, o ultimo a entrar e o ultimo a sair. \n senteNça I e II estao corretas, A tericeira sentença ta erradada (o ultimo a entrar e o ultimo a sair), deveria ser primeiro a sair \n");
 
 menu();	
 }
@@ -183,9 +188,50 @@ printf("Com base no codigo apresentado na pagina A SEGUIR (que apresenta uma Pil
 /*7. Desenvolva uma operacao para transferir elementos de uma pilha P1 para uma pilha P2 (copia). 
 Siga o prototipo abaixo:
 void transferirElementos(Pilha *P1, Pilha *P2);*/
+    Pilha P1;
+    P1.topo = 0;
+    // ... código para empilhar elementos na pilha P1 ...
+
+    Pilha P2;
+    P2.topo = 0;
+
+    printf("Pilha P1 antes da transferência:\n");
+    imprimePilha(&P1);
+
+    printf("Pilha P2 antes da transferência:\n");
+    imprimePilha(&P2);
+
+    transferirElementos(&P1, &P2);
+
+    printf("Pilha P1 após a transferência:\n");
+    imprimePilha(&P1);
+
+    printf("Pilha P2 após a transferência:\n");
+    imprimePilha(&P2);
 
 menu();
 };
+
+void transferirElementos(Pilha *P1, Pilha *P2) {
+    Pilha P_aux;
+    P_aux.topo = 0;
+
+    // Desempilhar elementos de P1 e empilhar em P_aux na mesma ordem
+    while (P1->topo > 0) {
+        int elemento = P1->vetor[P1->topo - 1];
+        desempilha(P1);
+        empilha(elemento, &P_aux);
+    }
+
+    // Desempilhar elementos de P_aux e empilhar de volta em P1 e P2
+    while (P_aux.topo > 0) {
+        int elemento = P_aux.vetor[P_aux.topo - 1];
+        desempilha(&P_aux);
+        empilha(elemento, P1);
+        empilha(elemento, P2);
+    }
+}
+
 
 
 void quest8()
@@ -196,9 +242,39 @@ void quest8()
 /* Desenvolva um algoritmo para inverter a posicao dos elementos de uma pilha P1. Você pode criar 
 pilhas auxiliares, se necessario. Mas o resultado precisa ser dado na pilha P. Siga o prototipo abaixo:
 void inverter (pilha *P1);*/
+    Pilha P1;
+    P1.topo = 0;
+    // ... código para empilhar elementos na pilha P1 ...
+
+    printf("Pilha original:\n");
+    imprimePilha(&P1);
+
+    inverter(&P1);
+
+    printf("Pilha invertida:\n");
+    imprimePilha(&P1);
 
 menu();
 };
+void inverter(Pilha *P1) {
+    Pilha P_aux;
+    P_aux.topo = 0;
+
+    // Desempilhar elementos de P1 e empilhar em P_aux na ordem inversa
+    while (P1->topo > 0) {
+        int elemento = P1->vetor[P1->topo - 1];
+        desempilha(P1);
+        empilha(elemento, &P_aux);
+    }
+
+    // Desempilhar elementos de P_aux e empilhar de volta em P1
+    while (P_aux.topo > 0) {
+        int elemento = P_aux.vetor[P_aux.topo - 1];
+        desempilha(&P_aux);
+        empilha(elemento, P1);
+    }
+}
+
 
 void quest9(){ 
 
@@ -208,9 +284,38 @@ void quest9(){
 /*Desenvolva um algoritmo para testar se duas pilhas P1 e P2 sao iguais. Duas pilhas sao iguais se possuem 
 os mesmos elementos, na mesma ordem.
 void iguais(pilha *P1, pilha *P2);*/
+    Pilha P1;
+    P1.topo = 0;
+    // ... código para empilhar elementos na pilha P1 ...
+
+    Pilha P2;
+    P2.topo = 0;
+    // ... código para empilhar elementos na pilha P2 ...
+
+    if (iguais(&P1, &P2)) {
+        printf("As pilhas sao iguais.\n");
+    } else {
+        printf("As pilhas sao diferentes.\n");
+    }
 
 menu();
 };
+int iguais(Pilha *P1, Pilha *P2) {
+    // Verifica se o número de elementos nas pilhas é diferente
+    if (P1->topo != P2->topo) {
+        return 0; // Pilhas são diferentes
+    }
+
+    // Verifica cada elemento das pilhas na mesma ordem
+    for (int i = 0; i < P1->topo; i++) {
+        if (P1->vetor[i] != P2->vetor[i]) {
+            return 0; // Pilhas são diferentes
+        }
+    }
+
+    return 1; // Pilhas são iguais
+}
+
 
 void quest10(){ 
 
@@ -219,18 +324,22 @@ void quest10(){
   /*Desenvolva um algoritmo para informar o usuario final se uma pilha P1 esta cheia. Siga o prototipo abaixo:
 void cheia(pilha *P1);
 */
+    Pilha P1;
+    P1.topo = 0;
 
 
+    cheia(&P1);
+menu();
+}
+//decima questao sobre implementar que a pilha esta cheia
+void cheia(Pilha *P1) {
+    if (P1->topo == TAMANHO_PILHA) {
+        printf("A pilha esta cheia.\n");
+    } else {
+        printf("A pilha nao esta cheia.\n");
+    }
 
-
-
-/*#include <stdio.h>
-#include <stdlib.h>
-#define TAMANHO_PILHA 20
-typedef struct{
-int vetor[TAMANHO_PILHA]; //tamanho da pilha
-int topo;
-}Pilha;
+};
 //prototipo da funcao empilha
 void empilha(int valor,Pilha *P1){
 //pilha->topo significa: ponteiro "pilha" apontando para CONTEÚDO de um item de uma struct
@@ -258,14 +367,7 @@ for(i=((P1->topo)-1);i>=0;i--){ //valor inicial de i e a ultima posicao da pilha
 printf("\t %d \n",P1->vetor[i]);
 }
 }
-int main() {
-//DECLARA UMA PILHA
-Pilha P1;
-P1.topo=0; // o topo da pilha deve comecar em zero
-}
-*/
 
-menu();
-};
+
 
 
