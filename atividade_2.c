@@ -190,7 +190,11 @@ Siga o prototipo abaixo:
 void transferirElementos(Pilha *P1, Pilha *P2);*/
     Pilha P1;
     P1.topo = 0;
-    // ... código para empilhar elementos na pilha P1 ...
+    empilha(60,&P1);
+    empilha(50,&P1);
+    empilha(30,&P1);
+    empilha(20,&P1);
+    empilha(500,&P1);
 
     Pilha P2;
     P2.topo = 0;
@@ -244,7 +248,11 @@ pilhas auxiliares, se necessario. Mas o resultado precisa ser dado na pilha P. S
 void inverter (pilha *P1);*/
     Pilha P1;
     P1.topo = 0;
-    // ... código para empilhar elementos na pilha P1 ...
+    empilha(60,&P1);
+    empilha(50,&P1);
+    empilha(30,&P1);
+    empilha(20,&P1);
+    empilha(500,&P1);
 
     printf("Pilha original:\n");
     imprimePilha(&P1);
@@ -286,11 +294,19 @@ os mesmos elementos, na mesma ordem.
 void iguais(pilha *P1, pilha *P2);*/
     Pilha P1;
     P1.topo = 0;
-    // ... código para empilhar elementos na pilha P1 ...
+    empilha(60,&P1);
+    empilha(50,&P1);
+    empilha(30,&P1);
+    empilha(20,&P1);
+    empilha(500,&P1);
 
     Pilha P2;
     P2.topo = 0;
-    // ... código para empilhar elementos na pilha P2 ...
+    empilha(60,&P2);
+    empilha(50,&P2);
+    empilha(30,&P2);
+    empilha(20,&P2);
+    empilha(500,&P2);
 
     if (iguais(&P1, &P2)) {
         printf("As pilhas sao iguais.\n");
@@ -301,19 +317,17 @@ void iguais(pilha *P1, pilha *P2);*/
 menu();
 };
 int iguais(Pilha *P1, Pilha *P2) {
-    // Verifica se o número de elementos nas pilhas é diferente
     if (P1->topo != P2->topo) {
-        return 0; // Pilhas são diferentes
+        return 0; 
     }
 
-    // Verifica cada elemento das pilhas na mesma ordem
     for (int i = 0; i < P1->topo; i++) {
         if (P1->vetor[i] != P2->vetor[i]) {
-            return 0; // Pilhas são diferentes
+            return 0; 
         }
     }
 
-    return 1; // Pilhas são iguais
+    return 1; 
 }
 
 
@@ -326,6 +340,11 @@ void cheia(pilha *P1);
 */
     Pilha P1;
     P1.topo = 0;
+    empilha(60,&P1);
+    empilha(50,&P1);
+    empilha(30,&P1);
+    empilha(20,&P1);
+    empilha(500,&P1);
 
 
     cheia(&P1);
