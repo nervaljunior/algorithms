@@ -169,15 +169,21 @@ while(opcao != 0){
 
 system("clear");
 printf("################### FILA #################\n");
+
 printf("Aluno: Nerval de jesus santos junior\n");
-printf("Matéria: Algoritmos\n");
+printf("Materia: Algoritmos\n\n");
+printf("prova desenvolvida no dia 11/07 durante a ultima aula de algoritmos \n no replit(IDE online para compilacao de programa em linguagem c)\n\n");
 
 printf("\n");
 printf("0 - Sair\n");
+
+printf("questao 2 da prova:\n");
 printf("1 - Enfilar\n");
 printf("2 - Desenfilar\n");
 printf("3 - se Fila vazia\n");
 printf("4 - se Fila cheia\n");
+
+printf("\nquestao 3 da prova:\n");
 printf("5 - MAIOR\n");
 printf("6 - MENOR\n");
 printf("7 - MEDIA\n");
